@@ -6,14 +6,14 @@ int main(){
 	int n, i, k = 0;
 	printf(">> ");
 	scanf("%d", &n);
-	
-	for (i = 2; i <= n / 2; ++i){
+
+	for (i = 2; i <= n / 2; i++){
 		if (n % i == 0){
 			k = 1;
 			break;
 		}
 	}
-	
+
 	if (n == 1 || n == 2){
 		printf("%d is a prime number\n", n);
 	}else{
