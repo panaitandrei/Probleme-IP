@@ -33,9 +33,7 @@ int main() {
 int is_prime(int num){
   int i;
 
-  if (num == 1){
-    return(1);
-  }else if (num == 2){
+  if (num == 1 || num == 2){
     return(1);
   }else{
     for (i = 2; i <= num / 2; i++){

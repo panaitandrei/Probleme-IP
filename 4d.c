@@ -1,9 +1,9 @@
-// Max/min dintre n nr citite de la de la tastatura
+// Suma tuturor nr pozitive citite de la tastatura
 
 #include <stdio.h>
 
 int main(){
-	int m, n, i, max=0, min;
+	int m, n, i, sum=0;
 
 	printf("How many natural numbers would you like to check: ");
 	scanf("%d", &m);
@@ -13,16 +13,12 @@ int main(){
 		printf("No %d >> ", i);
 		scanf("%d", &n);
 
-		if (n < min){
-			min = n;
-		}
-
-		if (n > max){
-			max = n;
-		}
+    if (n >= 0){      
+      sum += n;
+    }
 	}
 
-	printf("Min: %d\nMax: %d\n", min, max);
+	printf("Sum: %d\n", sum);
 
 	return(0);
 }

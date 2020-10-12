@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-int prime_check(int num);
+int is_prime(int num);
 
 int main()
 {
@@ -14,7 +14,7 @@ int main()
   for(i = 1; i <= m; i++){
     printf("No %d >> ", i);
     scanf("%d", &n);
-    if (prime_check(n)){
+    if (is_prime(n)){
       count++;
     }
   }
@@ -23,11 +23,10 @@ int main()
 	return 0;
 }
 
-int prime_check(int num){
+int is_prime(int num){
   int i;
-  if (num == 1){
-    return(1);
-  }else if (num == 2){
+
+  if (num == 1 || num == 2){
     return(1);
   }else{
     for (i = 2; i <= num / 2; i++){
@@ -36,4 +35,6 @@ int prime_check(int num){
       }
     }
   }
+
+	return(1);
 }

@@ -1,4 +1,4 @@
-// Max/min dintre n nr citite de la de la tastatura
+// Max/min a numerelor pozitive citite de la tastatura
 
 #include <stdio.h>
 
@@ -13,13 +13,15 @@ int main(){
 		printf("No %d >> ", i);
 		scanf("%d", &n);
 
-		if (n < min){
-			min = n;
-		}
+    if (n >= 0){
+      if (n < min){
+  			min = n;
+  		}
 
-		if (n > max){
-			max = n;
-		}
+  		if (n > max){
+  			max = n;
+  		}
+    }
 	}
 
 	printf("Min: %d\nMax: %d\n", min, max);
