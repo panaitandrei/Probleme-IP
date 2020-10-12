@@ -1,12 +1,13 @@
-// Se citesc n numere naturale. Cate numere prime s-au citit?
+/* Se citesc n numere de la tastatura.
+Sa se verifice daca toate numerele sunt prime. */
 
 #include <stdio.h>
 
-int prime_check(int num);
+int is_prime(int num);
 
-int main()
-{
-	int m, i, n, count=0;
+int main() {
+  int m, i, n, flag=0;
+
   printf("How many natural numbers would you like to check: ");
   scanf("%d", &m);
   printf("%d numbers will be checked. Enter numbers below: \n", m);
@@ -14,17 +15,24 @@ int main()
   for(i = 1; i <= m; i++){
     printf("No %d >> ", i);
     scanf("%d", &n);
-    if (prime_check(n)){
-      count++;
+
+    if (!is_prime(n)){
+      flag = 1;
     }
   }
 
-  printf("%d prime numbers inserted\n", count);
-	return 0;
+  if (flag == 1){
+    printf("Not all inserted numbers are prime\n");
+  }else{
+    printf("All inserted numbers are prime\n");
+  }
+
+  return 0;
 }
 
-int prime_check(int num){
+int is_prime(int num){
   int i;
+
   if (num == 1){
     return(1);
   }else if (num == 2){
@@ -36,4 +44,5 @@ int prime_check(int num){
       }
     }
   }
+  return(1);
 }
