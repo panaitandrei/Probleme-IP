@@ -5,14 +5,26 @@
 
 int main()
 {
-    char s[20];
+    char s[1000], r[1000];
+    int start, end, count=0;
 
     printf("Enter a string: ");
     scanf("%s", s);
 
-    char new_s = strrev(s);
+    while (s[count] != '\0') {
+      count++;
+    }
 
-    printf(">> %s\n", new_s);
+    end = count - 1;
+
+    for (start = 0; start < count; start++) {
+        r[start] = s[end];
+        end--;
+    }
+
+    r[start] = '\0';
+
+    printf(">> %s\n", r);
 
     return(0);
 }
